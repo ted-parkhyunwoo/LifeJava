@@ -33,7 +33,7 @@ public class T03_operator {
         strRes = "" + gender + age + name;
         System.out.println(strRes);
 
-        // 대입연산자, 비교연산자(==, !=)PASS.
+        // 대입연산자(=, +=, ...), 비교연산자(==, !=, ...) PASS...
 
         // 논리연산자(&, |, !, ^)
         boolean b1 = true & true;
@@ -41,9 +41,12 @@ public class T03_operator {
         System.out.println("b1:"+ b1 + "\nb2:" + b2);
         // & vs &&: 성능향상
         boolean b3 = false & true;  // 두번째 피연산자까지 검사
-        boolean b4 = false && true; // 첫번째 탈락시 실행X
+        boolean b4 = false && true; // 첫번째 피연산자에서 조건탈락.
+        // | vs ||
+        boolean b5 = true | false;      // 두번째 피연산자까지 검사
+        boolean b6 = true || false;     // 첫번째만 봐도 답 나오니 통과
 
-        //! 작성중...
+        // 증감연산(++, --) PASS...
 
     }
 }
