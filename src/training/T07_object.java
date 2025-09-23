@@ -5,7 +5,7 @@ public class T07_object {
         String res = fb.index + "번은 " + (fb.baked? "먹음":"안먹음");
         System.out.println(res);
     }
-    static void main(String[] args) {
+    public static void main(String[] args) {
         // 구체화 과정: 객체들의 속성부여.
         // 객체 선언시 new 클래스(); 식으로 선언됨...
         T07_class fb1 = new T07_class();
