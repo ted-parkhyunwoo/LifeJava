@@ -10,7 +10,7 @@ public class TestClass {
         System.out.println(name + " " + num);
     }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         TestClass.name = "hi";
         TestClass a = new TestClass(1);
         TestClass b = new TestClass(2);
