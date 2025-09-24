@@ -7,7 +7,8 @@ public class T07_object {
     }
     public static void main(String[] args) {
         // 구체화 과정: 객체들의 속성부여.
-        // 객체 선언시 new 클래스(); 식으로 선언됨...
+        // 객체 선언시 new 클래스(); 식으
+        // 로 선언됨...
         T07_class fb1 = new T07_class();
         fb1.index = 0;
         fb1.bake();
