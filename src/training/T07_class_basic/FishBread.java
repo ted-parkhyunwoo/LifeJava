@@ -1,7 +1,7 @@
-package training;
+package training.T07_class_basic;
 
 // 추상화: 클래스생성과정.
-public class T07_class {
+public class FishBread {
     // Member vars.
     int index;
     boolean baked;
