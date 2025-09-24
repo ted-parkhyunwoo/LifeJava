@@ -1,4 +1,4 @@
-package testcodes;
+package training.testcodes;
 
 public class Pyramid {
     public static void main(String[] args) {

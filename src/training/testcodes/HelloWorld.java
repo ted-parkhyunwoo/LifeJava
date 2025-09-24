@@ -1,4 +1,4 @@
-package testcodes;
+package training.testcodes;
 
 public class HelloWorld {
     public static void main(String[] args) {
