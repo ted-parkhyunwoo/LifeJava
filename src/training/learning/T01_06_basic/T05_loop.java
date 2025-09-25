@@ -1,4 +1,4 @@
-package training;
+package training.learning.T01_06_basic;
 
 public class T05_loop {
     public static void main(String[] args) {

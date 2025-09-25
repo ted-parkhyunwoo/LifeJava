@@ -1,4 +1,4 @@
-package training;
+package training.learning.T01_06_basic;
 
 public class T03_operator {
     public static void main(String[] args) {

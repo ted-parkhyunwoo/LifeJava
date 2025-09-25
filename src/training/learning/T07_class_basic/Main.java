@@ -1,4 +1,4 @@
-package training.T07_class_basic;
+package training.learning.T07_class_basic;
 
 public class Main {
     static void statusFb(FishBread fb) {

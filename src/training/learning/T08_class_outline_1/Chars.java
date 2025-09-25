@@ -1,4 +1,4 @@
-package training.T08_class_outline_1;
+package training.learning.T08_class_outline_1;
 
 // 클래스 구조: 강의내용과 다르게 개인적으로 작성하던것을 첨삭하여 코드등록.
 

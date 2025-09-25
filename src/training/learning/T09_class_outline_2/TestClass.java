@@ -1,4 +1,4 @@
-package training.T09_class_outline_2;
+package training.learning.T09_class_outline_2;
 // 4. 패키지 선언은 하나만 선언됨: 회사도메인.프로젝트.특성(용도);
 // 생략시 default package에 속하지만 이런 코드는 권장하지않음
 // @+ src 내 .은 디렉토리별로 구분됨.

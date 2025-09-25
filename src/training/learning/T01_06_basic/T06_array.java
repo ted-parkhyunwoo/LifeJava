@@ -1,4 +1,4 @@
-package training;
+package training.learning.T01_06_basic;
 
 import java.util.Arrays;
 

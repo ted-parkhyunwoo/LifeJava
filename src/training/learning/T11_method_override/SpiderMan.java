@@ -1,4 +1,4 @@
-package training.T11_method_override;
+package training.learning.T11_method_override;
 
 public class SpiderMan extends Person {
 

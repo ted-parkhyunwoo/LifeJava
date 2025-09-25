@@ -1,4 +1,4 @@
-package training.T08_class_outline_1;
+package training.learning.T08_class_outline_1;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package training;
+package training.learning.T01_06_basic;
 
 public class T02_type {
     public static void main(String[] args) {

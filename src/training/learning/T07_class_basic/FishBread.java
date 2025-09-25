@@ -1,4 +1,4 @@
-package training.T07_class_basic;
+package training.learning.T07_class_basic;
 
 // 추상화: 클래스생성과정.
 public class FishBread {
