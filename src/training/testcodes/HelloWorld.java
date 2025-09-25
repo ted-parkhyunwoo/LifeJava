@@ -3,9 +3,13 @@ import training.module.Print;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        int a = 2;
-        for (int i = 0; i < a; ++i) {
-            Print.ln("HelloWorld");
+        char[] hello = {'H', 'e', 'l', 'l', 'o'};
+
+        for (char c : hello) {
+            Print.p(c);
         }
+
+        Print.nextLn();
+        Print.ln("World");
     }
 }
