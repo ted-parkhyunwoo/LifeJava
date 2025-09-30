@@ -5,13 +5,13 @@ package training.learning.T14_dynamic_bind;
 public class Main {
     public static void main(String[] args) {
         Parent p = new Child();
-        // 객체 p 는 Parent 타입이지만, 무슨짓을 해도 Override 된 함수는 Parent것을 사용할 수 없었음
+        // 객체 p 는 Parent 타입이지만, 무슨짓을 해도 파생클래스에서 Override 된 함수는 선언타입 것을 사용할 수 없었음
         System.out.println(p.str());
 
         Object[] objs = new Object[5];
         objs[0] = new Child();
         objs[1] = new Parent();
-        objs[2] = "abc";
+        objs[2] = "abcdefg";
         int[] arr = new int[5];
         for (int i = 0; i < 5; i++) arr[i] = i;
         objs[3] = arr;          // 모든 참조자료형은 Object.
@@ -19,7 +19,7 @@ public class Main {
  
         System.out.println(((Child)objs[0]).str());
         System.out.println(((Parent)objs[1]).str());
-        System.out.println(objs[2]);
+        System.out.println(((String)objs[2]).length());
         for (int i : (int[])objs[3]) { System.out.println(i); }     // int[] 로 캐스팅(형변환)
         System.out.println(objs[4]);
     }
