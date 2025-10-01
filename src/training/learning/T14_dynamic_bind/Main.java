@@ -13,6 +13,11 @@ public class Main {
         Object[] objs = new Object[5];
         objs[0] = new Child();
         objs[1] = new Parent();
+
+        ((Parent)objs[0]).func();   // override 가 아니나, 뭔짓을해도 안됨.
+        ((Child)objs[0]).func();
+        ((Parent)objs[1]).func();
+
         objs[2] = "abcdefg";
         int[] arr = new int[5];
         for (int i = 0; i < 5; i++) arr[i] = i;
