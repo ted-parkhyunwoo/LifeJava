@@ -1,10 +1,8 @@
-인텔리j 에선 디렉토리별 package형식으로 지정해줘야 하나봄.-추측
-    !!이렇게 작성한 코드는 vscode에선 package로 추가한 디렉토리 상위 디렉토리를 우클릭하여 javaSource경로에 추가 선택해줘야 함.
-또한 불필요한 코드에 리펙토링을 강요하는 성향이 있음
+LifeJava Write up.
 
-vscode 에선 f5만 누르면 자동으로 실행됨. (컴파일 후 exe 불러오는 방식인듯.)
-일반적인 방법은 javac 파일이름.java  이후 java 파일이름 (확장자없이) 로 실행함.
+조용준 님의 '생활 밀착형 객체지향 자바 프로그래밍' 강의 write-up.
+writeup : src/training/learning 에 기록된다.
+강의자료: com.example.javastudy 에 저장됐다.
 
-
-콘솔출력문 호출함수 System.out.println();의 인텔리j는 sout 입력시 자동완성.
-메인함수는 psvm 으로 입력하면 자동완성
+개인용 패키지는 학습중 궁금해서 작성해본 내용, summary 등이 작성됐다.
+위치는 training/module에 기록했으며, 구현시험은 training/testcodes에 기록했다.
