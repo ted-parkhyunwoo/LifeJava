@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Parent p = new Child();
         // 객체 p 는 Parent 타입이지만, 무슨짓을 해도 파생클래스에서 Override 된 함수는 선언타입 것을 사용할 수 없었음
+        // 타입캐스팅을 유도해 일부러 기본객체를 따르도록 slicing을 의도해도 안됨.
+        // 본질은 타입이 달라도 메모리에는 파생객체 원형이 유지되고, 모든 타입이 참조자료형 화 되기 때문인듯.
         System.out.println(p.str());
 
         Object[] objs = new Object[5];

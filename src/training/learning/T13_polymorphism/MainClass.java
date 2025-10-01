@@ -19,7 +19,7 @@ public class MainClass {
         haha2.setAge(56);
         haha2.setName("haha2");
         // haha2.setHeight(170.1f);     // haha2의 setHeight, getHeight접근 안됨. 하지만 메모리에는 있어서  toString()으론 height를 불러올 수 있음.
-        System.out.println(haha2);      // 모호성: toString()이 기본클래스를 따름.
+        System.out.println(haha2);      // 기본객체가 동적바인딩(Override)로 인한 파생클래스의 Override를 따름.
         System.out.println(haha3);
         System.out.println(haha4);
 
