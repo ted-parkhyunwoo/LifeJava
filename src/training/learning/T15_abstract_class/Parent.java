@@ -1,4 +1,4 @@
-package training.learning.T15_interface;
+package training.learning.T15_abstract_class;
 
 public abstract class Parent {
     // final 변수 : 불변보장. 상수처리처럼 한번 할당된 것은 수정할 수 없다.(런타임 상수. const는 컴파일타임상수)

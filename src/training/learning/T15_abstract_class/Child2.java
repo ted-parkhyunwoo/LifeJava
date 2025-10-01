@@ -1,4 +1,4 @@
-package training.learning.T15_interface;
+package training.learning.T15_abstract_class;
 
 public class Child2 extends Parent {
     Child2() { super(2); }

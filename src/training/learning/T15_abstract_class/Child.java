@@ -1,4 +1,4 @@
-package training.learning.T15_interface;
+package training.learning.T15_abstract_class;
 
 public class Child extends Parent {
     // 생성자를 통한 blank final변수 id 에 할당.
