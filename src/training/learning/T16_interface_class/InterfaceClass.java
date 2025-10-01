@@ -19,27 +19,30 @@ interface ifc3 { void method4(); }
 interface ifc4 { void method5(); }
 
 // 인터페이스 상속은 implements 키워드. (다중상속 가능.)
-class Parent implements ifc4 {  // imlement 는 구현을 뜻함: ifc4의 선언을 구현한다는 뜻.
-    public void method5() { System.out.println("Method5");}
+class Parent implements ifc4 {  // implement 는 구현을 뜻함: ifc4의 선언을 구현한다는 뜻.
+    public void method5() { System.out.println("Method5"); }
 }
 
 // 파생클래스는 조상클래스(여기선 인터페이스) 의 접근제한자 범위보다 넓어야 함.
 // 따라서 인터페이스클래스(인터페이스)의 멤버메서드는 항상 public이므로, 구현클래스(Parent, Child)에서는 모두 public으로 선언되어야 함.
 class Child extends Parent implements ifc2, ifc3 {
-    public void method1() { System.out.println("Method1");}
-    public void method2() { System.out.println("Method2");}
-    public void method3() { System.out.println("Method3");}
-    public void method4() { System.out.println("Method4");}
+    public void method1() { System.out.println("Method1"); }
+    public void method2() { System.out.println("Method2"); }
+    public void method3() { System.out.println("Method3"); }
+    public void method4() { System.out.println("Method4"); }
+    @Override
+    public void method5() { System.out.println("Override: Method5"); }
 }
 
 public class InterfaceClass {
     public static void main(String[] args) {
         // 여러타입으로 캐스팅해보기(형변환)
 
-
         // child의 기본클래스. ifc4만 상속받음.(method5)
         Parent p = new Child();
-        p.method5();
+        p.method5();        // Child에서 override됨.
+        Parent p2 = new Parent();
+        p2.method5();       // Parent객체는 override되지 않음.
 
         // static 멤버는 클래스당 한개만 가질 수 있음. 따라서 해당타입으로 인스턴스 생성 안해도 이미 사용가능(싱글톤학습내용 참고)
         System.out.println(ifc.MEMBER1); 
