@@ -1,5 +1,5 @@
 package training.learning.T17_generic_class;
-
+import java.lang.reflect.Array;
 
 // 기본형의 클래스
 class NormalBox {
@@ -8,7 +8,7 @@ class NormalBox {
     public Object getObj() { return this.obj; }
 }
 
-// 제네릭클래스
+// 제네릭클래스 (+@실험결과 cpp template 처럼 다중매개변수 사용 가능. template<typename T1, typename T2> : <T1, T2> )
 class GenericBox<T> {
     private T t;
     public void setT(T t) { this.t = t; }
@@ -21,10 +21,31 @@ class NumberBox<T extends Number> {
         double res = 0d;
         for (T num : nums) {
             res += num.doubleValue();       // 주의. doubleValue(); 로 모든 참조형의 숫자->double기본자료형 형변환 필요.
-//            double tmp = num;         // 자동 언박싱 안됨. 명시적 형변환 필요.
-//            res += (double)num;       // 안타깝지만 캐스팅 익셉션 오류발생: Integer, Float 참조형에 대한 형변환이 안됨.
+            // double tmp = num;         // 자동 언박싱 안됨. 명시적 형변환 필요.
+            // res += (double)num;       // 안타깝지만 캐스팅 익셉션 오류: Integer, Float등은 캐스팅 안됨.
         }
         System.out.println("RESULT: " + res);
+    }
+}
+
+
+// +@함수에서의 제네릭
+// java 23 이하 메서드 전역공간에 넣기 안돼서, 클래스내부에 넣음. 대신 초기화 필요없는 static메서드로 사용중.
+// Container 타입에 length 나 [] 같은 인덱스 접근은 거부되어, reflect Array 활용(import문 참고)
+class ArrayUtil {
+    public static <Container> void printArray(Container c) {
+        if (c == null) return;
+
+        int size = Array.getLength(c);              // length 는 Array.getLength() 활용.
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        if (size > 0) sb.append(Array.get(c, 0));   // c[0] 등 인덱스 접근은 Array.get() 활용.
+        for (int i = 1; i < size; ++i) {
+            sb.append(", ");
+            sb.append(Array.get(c, i));
+        }
+        sb.append(']');
+        System.out.println(sb.toString());
     }
 }
 
@@ -46,16 +67,25 @@ public class GenericClass {
         }
 
         // 제네릭클래스 활용
-        GenericBox<String> box2 = new GenericBox<>();       // 대입은 똑같이 맞추거나, <>형태로 비우거나, 생략 가능.
+        GenericBox<String> box2 = new GenericBox<>();       // <명시>하거나, <>형태로 비우거나, 생략 가능(권장x)
         box2.setT("Hello Generic");
         System.out.println(box2.getT());
 
         // 제네릭클래스의 제한: Number클래스 파생클래스(정수,실수형 등)만 받도록.
-        NumberBox<Number> box3 = new NumberBox<>();
+        NumberBox<Number> box3 = new NumberBox();           // 권장되지 않는 원시타입 사용.
         box3.addNums(1, 2, 3, 4, 5.5, 6.6);
 
-        NumberBox<Integer> box4 = new NumberBox<>();        // Number 하위 파생클래스들도 가능.
+        NumberBox<Integer> box4 = new NumberBox<Integer>();        // Number 하위 파생클래스들도 가능.
         box4.addNums(1,2,3,4,5);
+
+
+        // +@메서드제네릭 활용
+        int[] arr = {1,2,3};
+        ArrayUtil.printArray(arr);
+        Character[] arr2 = {'J','A','V','A'};
+        ArrayUtil.printArray(arr2);
+        String arr3 = "HELLO";
+        // ArrayUtil.printArray(arr3);  Array.getLength를 사용할 수 없다.
 
     }
 }
