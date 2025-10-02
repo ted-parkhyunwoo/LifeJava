@@ -57,13 +57,10 @@ public class GenericClass {
 
         // Object클래스를 이용한 형변환의 불편성.
         NormalBox box1 = new NormalBox();
-
         box1.setObj("Hello Normal");
         Object obj1 = box1.getObj();
-
         String str1 = (String)obj1;     // 꺼낼 때 형변환 필요. Object -> String.
         System.out.println(str1);
-
         if (obj1 instanceof String) {   // 보통은 여러타입을 다루므로, instanceof로 검사후 실행해야함.
             System.out.println((String)obj1);
         }
