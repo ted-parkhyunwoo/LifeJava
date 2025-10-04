@@ -35,7 +35,7 @@ class NumberBox<T extends Number> {
 // +@함수에서의 제네릭
 // Container 타입(아직 결정되지 않은 타입)에 length 나 [] 같은 인덱스 접근은 거부되어, reflect Array 활용(import문 참고)
 class ArrayUtil {   // java 23 이하 메서드 전역공간에 넣기 안돼서, 클래스내부에 넣음. 대신 초기화 필요없는 static메서드로 사용중.
-    public static <Container> void printArray(Container c) {
+    public static <Container> void printArray(Container c) {    // static 메서드 처리로 객체선언 없이 호출가능
         if (c == null) return;
 
         int size = Array.getLength(c);              // length 는 Array.getLength() 활용.
@@ -59,11 +59,8 @@ public class GenericClass {
         NormalBox box1 = new NormalBox();
         box1.setObj("Hello Normal");
         Object obj1 = box1.getObj();
-        String str1 = (String)obj1;     // 꺼낼 때 형변환 필요. Object -> String.
-        System.out.println(str1);
-        if (obj1 instanceof String) {   // 보통은 여러타입을 다루므로, instanceof로 검사후 실행해야함.
-            System.out.println((String)obj1);
-        }
+        System.out.println((String)obj1);   // 특정타입으로 쓰러면 타입캐스팅 필요.
+        if (obj1 instanceof String) { System.out.println((String)obj1); } // 특정타입에 대한 조작은 instanceof로 검사후 실행해야함.
 
         // 제네릭클래스 활용
         GenericBox<String> box2 = new GenericBox<>();       // <명시>하거나, <>형태로 비우거나, 생략 가능(권장x)

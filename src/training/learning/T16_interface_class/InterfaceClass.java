@@ -1,9 +1,8 @@
 package training.learning.T16_interface_class;
 
-// class 대신 interface로 선언.
 // class와 다르게 interface는 파생 interface와 다중상속 가능.(이름이 같은 메서드도 구현이 안돼서 모호성이 사라짐.)
 
-interface ifc {
+interface ifc {     // class 대신 interface로 선언.
     // 모든 멤버변수는 public static final임. (생략가능) - 런타임 상수처리 개념: ifc객체를 생성할수도 없고 한번만 선언가능하므로.
     public static final int MEMBER1 = 100;
     int MEMBER2 = 200;
