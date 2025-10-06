@@ -19,7 +19,8 @@ public class ListUse {
         List<String> myList = new LinkedList<>();       // 링크드리스트 전환시.
 
         //! 삽입, 조회, 수정, 삭제의 핵심은 add, get, set, remove
-        
+
+
         // 1. 추가 및 삽입
         myList.add(0, "Hello");
         myList.add(1, "Hi");
@@ -31,6 +32,7 @@ public class ListUse {
         add_data.add("hoho");   add_data.add("hehe");
         myList.addAll(add_data);        // 전부추가, index에 삽입 가능.
         System.out.println(myList);
+
 
         // 2. 정보 접근(조회)
         System.out.println(myList.contains("Hello"));   // 특정요소 포함여부: contains(객체:요소타입)
@@ -48,9 +50,11 @@ public class ListUse {
         // advanced for문 접근
         for (String e : myList) { System.out.println(e); }
 
+
         // 3. 수정
         myList.set(0, "HELLO");         //객체수정
         System.out.println(myList);
+
 
         // 4. 삭제
         myList.remove(2);               // index기반 삭제
